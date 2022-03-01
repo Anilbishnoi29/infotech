@@ -431,6 +431,11 @@ form,
   display: grid;
   place-items: center;
 }
+.formControl button:hover {
+  background: var(--btn-bg);
+  color: var(--light-bg);
+  border: 1px solid var(--btn-bg);
+}
 .formControl i {
   font-size: 1rem;
   padding: 0.5rem;

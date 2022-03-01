@@ -428,7 +428,8 @@ form,
   margin: 1.2rem 0;
   width: 100%;
   padding: 0.4rem 2.5rem;
-  color: var(--whiteColor);
+  font-weight: 600;
+  color: var(--FormColor);
   background-color: transparent;
   line-height: 1.5;
   outline: none;
@@ -469,9 +470,11 @@ form,
   left: auto;
   right: 0%;
 }
-.formControl input:focus {
-  box-shadow: 0 0 0 0.2rem var(--red-color) !important;
-  border-color: var(--red-color);
+.formControl input:focus,
+.formControl textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #e9221d6b !important;
+  /* border-color: var(--red-color); */
 }
 input:-webkit-autofill {
   background-color: var(--red-color) !important;

@@ -15,7 +15,7 @@ body {
   line-height: 1.5;
 }
 :root {
-  --red-color: #e9221d;
+  --red-color: #0062ff;
   --white-color: #fff;
   --heading-color: #343434;
   --light-bg: #f8f8f8;
@@ -29,6 +29,7 @@ body {
   --FormColor: #1d1e22;
   --whiteColor: #e7e7e7;
   --paragraphColor: #9c9c9c;
+  --hr-bg: #f25c5c;
 }
 p {
   font-size: 1.2rem;
@@ -63,7 +64,7 @@ section {
 }
 .info-hr {
   width: var(--hr-width);
-  background-color: var(--red-color);
+  background-color: var(--hr-bg);
   height: 0.3rem;
   outline: none;
   border: none;
@@ -146,17 +147,34 @@ header {
   /* border-bottom: 2px solid var(--red-color); */
   box-shadow: var(--box-shadow);
 }
-header .logo a img {
-  height: 50px;
+header .logo a i {
+  font-size: 3rem;
+  color: var(--red-color);
+  animation: logo 3s ease-in infinite;
+  transition: 0.5s ease-in-out;
+}
+@keyframes logo {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(45deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
 }
 header nav ul li a {
   padding: 0.5em 1em;
   color: var(--heading-color);
   transition: 0.5s ease-in-out;
+  font-weight: 500;
 }
-header nav ul li a:hover {
+header nav ul li a:hover,
+.active {
   color: var(--red-color);
 }
+
 /* slider */
 #slider {
   background-image: url(../images/it_service/slide3.jpg);
@@ -186,6 +204,8 @@ header nav ul li a:hover {
   height: 100%;
   position: absolute;
   background-image: url(../images/it_service/dark_bg_img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: right;
 }
 #infotech::after {
@@ -195,7 +215,7 @@ header nav ul li a:hover {
   width: 35%;
   height: 100%;
   position: absolute;
-  background-color: #c0100ccc;
+  background-color: #0062ff62;
 }
 #infotech h2 {
   margin-top: 1em;
@@ -216,6 +236,18 @@ header nav ul li a:hover {
   font-size: 4rem;
   color: var(--red-color);
   padding: 0.3em;
+}
+#info-over .info-item i.fa-solid.fa-face-smile {
+  color: #f25c5c;
+}
+#info-over .info-item i.fa-solid.fa-lightbulb {
+  color: #f6c954;
+}
+#info-over .info-item i.fa.fa-list-alt {
+  color: #289e64;
+}
+#info-over .info-item i.fa.fa-desktop {
+  color: #2a255d;
 }
 /* request */
 #request {
@@ -265,6 +297,7 @@ footer h4 {
 }
 footer .info-hr {
   width: calc(var(--hr-width) / 2);
+  /* background: #f6c954; */
 }
 .footer-item {
   flex: 1;
@@ -363,6 +396,42 @@ footer#footer {
   border: 3px solid var(--red-color);
   margin-bottom: 1em;
 }
+.product-items i.fa-solid.fa-desktop {
+  background-color: #f25c5c;
+  border: 3px solid #f25c5c;
+}
+.product-items i.fa-solid.fa-desktop:hover {
+  background-color: transparent;
+  color: #f25c5c;
+  border: 3px solid #f25c5c;
+}
+.product-items i.fa-solid.fa-camera {
+  background-color: #f6c954;
+  border: 3px solid #f6c954;
+}
+.product-items i.fa-solid.fa-camera:hover {
+  background-color: transparent;
+  color: #f6c954;
+  border: 3px solid #f6c954;
+}
+.product-items i.fa-solid.fa-network-wired {
+  background-color: #289e64;
+  border: 3px solid #289e64;
+}
+.product-items i.fa-solid.fa-network-wired:hover {
+  background-color: transparent;
+  color: #289e64;
+  border: 3px solid #289e64;
+}
+.product-items i.fa-solid.fa-power-off {
+  background-color: #2a255d;
+  border: 3px solid #2a255d;
+}
+.product-items i.fa-solid.fa-power-off:hover {
+  background-color: transparent;
+  color: #2a255d;
+  border: 3px solid #2a255d;
+}
 .product-items i:hover {
   background: var(--light-bg) var(--red-color);
   color: var(--red-color);
@@ -382,6 +451,15 @@ footer#footer {
   transition: 0.5s ease-in-out;
   border: 3px solid transparent;
   margin-bottom: 1em;
+}
+.get-touch .product-items i.fa-solid.fa-road {
+  color: #f25c5c;
+}
+.get-touch .product-items i.fa-solid.fa-user {
+  color: #f6c954;
+}
+.get-touch .product-items i.fa-solid.fa-envelope {
+  color: #289e64;
 }
 /* form */
 #form {
@@ -428,7 +506,8 @@ form,
   margin: 1.2rem 0;
   width: 100%;
   padding: 0.4rem 2.5rem;
-  color: var(--whiteColor);
+  font-weight: 600;
+  color: var(--FormColor);
   background-color: transparent;
   line-height: 1.5;
   outline: none;
@@ -469,9 +548,11 @@ form,
   left: auto;
   right: 0%;
 }
-.formControl input:focus {
-  box-shadow: 0 0 0 0.2rem var(--red-color) !important;
-  border-color: var(--red-color);
+.formControl input:focus,
+.formControl textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #e9221d6b !important;
+  /* border-color: var(--red-color); */
 }
 input:-webkit-autofill {
   background-color: var(--red-color) !important;

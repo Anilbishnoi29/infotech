@@ -102,7 +102,7 @@ img {
   font-size: 1.1rem;
   padding: 0.5em 1.8em;
   background-color: var(--red-color);
-
+  /* border-radius: 5em; */
   border-radius: 0.25rem;
   color: var(--white-color);
   margin: 0.5em;
@@ -123,6 +123,23 @@ img {
 }
 .section-padding {
   padding: 4em 0;
+}
+.topheader {
+  padding: 0.3em;
+  background-color: var(--red-color);
+}
+.topheader .d-flex {
+  margin-right: 0.8em;
+}
+.topheader p,
+.topheader i,
+.topheader a {
+  font-size: 0.8rem;
+  margin: 0.4em 0.4em;
+  color: var(--light-bg);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
 }
 header {
   padding: 1em 0;

@@ -176,14 +176,64 @@ header nav ul li a:hover,
 }
 
 /* slider */
+#slider-cover {
+  max-width: 100%;
+  width: 100vw;
+  overflow: hidden;
+}
 #slider {
-  background-image: url(../images/it_service/slide3.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0px -20em;
+  position: relative;
+  overflow: hidden;
+}
+ul.slider-img {
+  width: 4500px;
+  position: absolute;
+  z-index: -1;
+  animation: slider 18s ease-in-out infinite;
+}
+ul.slider-img li {
+  width: 1500px;
+  float: left;
+}
+ul.slider-img li img {
+  width: 100%;
+}
+@keyframes slider {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  35% {
+    left: 0;
+    opacity: 1;
+  }
+  39.9997% {
+    left: 0;
+    opacity: 0.9;
+  }
+  39.9998% {
+    left: -1500px;
+    opacity: 1;
+  }
+  65.9998% {
+    left: -1500px;
+    opacity: 0.9;
+  }
+  65.9999% {
+    left: -3000px;
+    opacity: 1;
+  }
+  99.9998% {
+    left: -3000px;
+    opacity: 0.9;
+  }
+  99.9999% {
+    left: 0;
+    opacity: 1;
+  }
 }
 #slider .slider-text {
-  background-color: rgb(0 0 0 / 45%);
+  background-color: rgb(0 0 0 / 50%);
   padding: 10em 0;
   text-align: center;
   color: var(--white-color);
